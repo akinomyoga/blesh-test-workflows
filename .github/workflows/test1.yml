@@ -1,0 +1,19 @@
+name: test
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - if: runner.os == 'Windows'
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+      - name: Test
+        run: bash .github/workflows/test1.bash
