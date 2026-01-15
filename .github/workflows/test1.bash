@@ -9,7 +9,7 @@ if [[ $OSTYPE == msys* ]]; then
   echo
 fi
 
-LC_ALL=C.UTF-8 PS4='> '
+LC_ALL=en_US.UTF-8
 
 s=$'\U1F1E6'
 echo "length: ${#s}"
